@@ -1,5 +1,7 @@
-function timeFive(arg) {  
-    return arg * 5;  
+function timesFive(arg) {  
+    return arg * 5;
   }
   
-  const anser = timeFive(5);
+  timesFive(5);
+  timesFive(2);
+  timesFive(0);
