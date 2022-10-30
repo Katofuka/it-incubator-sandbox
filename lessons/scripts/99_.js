@@ -8,8 +8,6 @@ function getCount(str) {
     return countStart - newString.length;
 }
 
-console.log(getCount("abracadabra"));
-
 function parse(data) {
     let val = 0
     const arrayStr = data.split('');
@@ -22,7 +20,7 @@ function parse(data) {
         } else if (arrayStr[i] === "d") {
             val--;
         } else if (arrayStr[i] === "s") {
-            val = Math.pow(val,2);
+            val = Math.pow(val, 2);
         } else if (arrayStr[i] === "o") {
             returnArray.push(val);
         }
@@ -30,5 +28,26 @@ function parse(data) {
     return returnArray;
 }
 
-const rend = parse("iiisdoso");
-console.log(rend);
+function gap(g, m, n) {
+    // your code
+    const primeArray = [];
+    for (let i = m; i <= n; i++) {
+        let flag = 1;
+        if (i > 2 && i % 2 != 0) {
+            for (let j = 3; j * j <= i; j = j + 2) {
+                if (i % j == 0) {
+                    flag = 0;
+                    break;
+                }
+            }
+        }
+        else if (i != 2) flag = 0;
+        if (flag == 1) primeArray.push(i)
+    }
+    for (let i = 0; i < primeArray.length; i++) {
+        if (i + 1 < primeArray.length && primeArray[i + 1] - primeArray[i] === g)
+            return [primeArray[i], primeArray[i + 1]]
+    }
+    return null;
+}
+
