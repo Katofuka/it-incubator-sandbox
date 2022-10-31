@@ -62,8 +62,8 @@ function meeting(x, need) {
 
             if (chairOccupied.length < x[i][1]) {
                 const free = x[i][1] - chairOccupied.length;
-                if(free <= need) {
-                    tookInRoom += free;                 
+                if (free <= need) {
+                    tookInRoom += free;
                 } else {
                     tookInRoom += need;
                 }
@@ -73,15 +73,25 @@ function meeting(x, need) {
             } else {
                 chairArray.push(0);
             }
-            if(need === 0) return chairArray;
+            if (need === 0) return chairArray;
         }
-        if(need > 0 ) return "Not enough!"
-        
+        if (need > 0) return "Not enough!"
+
         return chairArray;
-        
+
     }
 }
 
-console.log(meeting([['XXX', 3], ['XXXXX', 6], ['XXXXXX', 9]], 4)); //[0, 1, 3]
-console.log(meeting([['XX', 2], ['XXXX', 6], ['XXXXX', 4]], 0));  //'Game On'
-console.log(meeting([['XXX', 1], ['XXXXXX', 6], ['X', 2], ['XXXXXX', 8], ['X', 3], ['XXX', 1]], 5));   // [0, 0, 1, 2, 2]);
+
+const factorial = n => {
+    let countFactorial = 1;
+    return n === 0 ? 1 : n > 1 ? countFactorial = n * (factorial(n - 1)) : countFactorial
+}
+
+
+function sumStrings(a,b) { 
+    return isNaN((+a)) ? `${BigInt(b)}` : isNaN((+b)) === NaN ? `${BigInt(a)}`: `${BigInt(a) + BigInt(b)}` ;
+    //return `${(+a) + (+b)}`
+  }
+
+console.log(sumStrings('0024','456'));
