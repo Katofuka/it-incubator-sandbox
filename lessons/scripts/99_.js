@@ -94,4 +94,4 @@ function sumStrings(a,b) {
     //return `${(+a) + (+b)}`
   }
 
-console.log(sumStrings('0024','456'));
+
