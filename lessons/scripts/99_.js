@@ -89,9 +89,17 @@ const factorial = n => {
 }
 
 
-function sumStrings(a,b) { 
-    return isNaN((+a)) ? `${BigInt(b)}` : isNaN((+b)) === NaN ? `${BigInt(a)}`: `${BigInt(a) + BigInt(b)}` ;
-    //return `${(+a) + (+b)}`
-  }
+function incrementString(strng) {
+    // return incrementedString
+    const arrayStr = strng.split('');
+    if (/^-?[\d.]+(?:e-?\d+)?$/.test(arrayStr[arrayStr.length - 1])) {
+        arrayStr[arrayStr.length - 1]++;
+        return arrayStr.join("")
+    } else {
+        arrayStr.push("0");
+        return arrayStr.join("");
+    }
+}
 
-
+console.log(incrementString("foobar000"));
+console.log(incrementString("foobar00b"));
