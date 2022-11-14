@@ -1,10 +1,14 @@
-function createPhoneNumber(numbers) {
-    numbers.splice(0, 0, "(");
-    numbers.splice(4, 0, ")");
-    numbers.splice(5, 0, " ");
-    numbers.splice(9, 0, "-");
-    return numbers.join('');
+function sum(n) {
+    let doorOpened = []
+    for (let i=0; i<n; i++) {
+        doorOpened.push(1)
+    }
+    
+
+
+    
 }
 
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
-console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]));
+console.log(sum(5));
+console.log(sum(10));
+console.log(sum(100));
